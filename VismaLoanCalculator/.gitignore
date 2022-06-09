@@ -1,0 +1,68 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+ProjectEvaluation
+V17
+DesignTimeBuild
+FileContentIndex
+.vs
+.vscode
+# System files
+.DS_Store
+Thumbs.db
+.src/environments/environment.prod.ts
+.vs/LoanCalculator/FileContentIndex/5dfb2cc3-7fd9-4d2b-9739-991f02581d8a.vsidx
+.vs/LoanCalculator/FileContentIndex/0c72deb6-c49e-44a4-a034-1b18408f55eb.vsidx
+.vs/LoanCalculator/FileContentIndex/757ca679-2a55-4508-9aab-7665e04f7a8a.vsidx
+.vs/LoanCalculator/FileContentIndex/822fa0ff-85b3-4017-a2b0-94da8008fcf0.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/04121f94-dc5b-4040-8ff4-999782593444.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/633760b7-3ca5-481d-a33e-d771861a1d31.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/bb070385-92b9-4874-b7cd-fc8f345e997b.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/df3c05f6-ea3e-462b-8477-83c96d5536dc.vsidx
+.vs/VismaLoanCalculator/DesignTimeBuild/.dtbcache.v2
+.vs/LoanCalculator/DesignTimeBuild/.dtbcache.v2
+.vs/LoanCalculator/FileContentIndex/0c72deb6-c49e-44a4-a034-1b18408f55eb.vsidx
+.vs/LoanCalculator/FileContentIndex/5dfb2cc3-7fd9-4d2b-9739-991f02581d8a.vsidx
+.vs/LoanCalculator/FileContentIndex/757ca679-2a55-4508-9aab-7665e04f7a8a.vsidx
+.vs/LoanCalculator/FileContentIndex/822fa0ff-85b3-4017-a2b0-94da8008fcf0.vsidx
+.vs/VismaLoanCalculator/DesignTimeBuild/.dtbcache.v2
+.vs/VismaLoanCalculator/FileContentIndex/04121f94-dc5b-4040-8ff4-999782593444.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/633760b7-3ca5-481d-a33e-d771861a1d31.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/bb070385-92b9-4874-b7cd-fc8f345e997b.vsidx
+.vs/VismaLoanCalculator/FileContentIndex/df3c05f6-ea3e-462b-8477-83c96d5536dc.vsidx
+.vs/LoanCalculator/FileContentIndex/read.lock

@@ -1,0 +1,82 @@
+<!-- <nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://www.visma.com/">Financial Solutions</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index">Bank Loans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Health Insurance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Leasing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Savings</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1 id="tableLabel">Visma Loan Calculator</h1>
+
+<p>This component demonstrates fetching data from the server. Haha Oddone!</p>
+
+<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a
+      href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more
+    details.</em></p>
+<button class="btn btn-success"> Click me!</button>
+
+<p *ngIf="response"> Am adus da pa server {{response[0].nume}} si un {{ response[0].prenume}}</p>
+<div>
+  <input *ngIf="response" type="range" min="1" max="48" [(ngModel)]="response[0].selectedNumber" />
+</div>
+<p *ngIf="response">Oddone has selected {{response[0].selectedNumber}}</p>
+<div class="container-fluid mt--6">
+  <table *ngIf="forecasts">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let forecast of forecasts">
+        <td>{{ forecast.date }}</td>
+        <td>{{ forecast.temperatureC }}</td>
+        <td>{{ forecast.temperatureF }}</td>
+        <td>{{ forecast.summary }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h1>THis is a test</h1>
+</div> -->
+
+<div>
+  <loantypes></loantypes>
+</div>
+
+<body>
+  <div>
+    <form>
+      <p>Min. 1 year - Max. 30 years</p>
+      <input type="number" [defaultValue]="1" value="1" min = "1" max = "30" NumberOnly/>
+    </form>
+    <p *ngIf="periodSlider"> Am adus da pa server un {{ periodSlider.periodYears}}</p>
+  <div>
+    <input *ngIf="periodSlider" type="range" min="1" max="30" [(ngModel)]="periodSlider.periodYears" />
+  </div>
+  <p *ngIf="periodSlider">Oddone has selected {{periodSlider.periodYears}}</p>
+  </div>
+</body>
+
