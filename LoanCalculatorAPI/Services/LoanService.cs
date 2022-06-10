@@ -42,20 +42,21 @@ namespace LoanCalculatorAPI.Services
 
         private IEnumerable<PaymentPlan> CreatePaymentPlan(Loan loan)
         {
-            var months = YearsToMonthsConverter(loan.LoanPeriod);
+            var months = YearsToMonthsConverter(loan.Period);
             var totalLoanInterest = TotalInterest(loan);
             var monthlyLoanRate = MonthlyRateCalculator(loan);
-
+            var totalPayableAmount = TotalPayableLoanAmount(loan.Amount, totalLoanInterest);
             for (int i = 0; i < months; i++)
             {
+                
                 yield return new PaymentPlan
                 {
-                    InitialLoanAmmount = loan.LoanAmmount,
+                    InitialLoanAmount = loan.Amount,
                     NextDueDate = DateTime.UtcNow.AddMonths(i),
-                    TotalPayableAmmount = TotalPayableLoanAmmount(loan.LoanAmmount, totalLoanInterest),
-                    MonthlyInterestAmmount = CalculateLoanMontlyInterest(loan),
-                    MontlyRateAmmount = monthlyLoanRate,
-                    RemainingLoanAmmount = CalculateRemainingDebtAmmount(loan.LoanAmmount, monthlyLoanRate, i)
+                    TotalPayableAmount = totalPayableAmount,
+                    MonthlyInterestAmount = CalculateLoanMontlyInterest(loan),
+                    MontlyRateAmount = monthlyLoanRate,
+                    RemainingLoanAmount = CalculateRemainingDebtAmount(totalPayableAmount, monthlyLoanRate, i)
                 };
             }
         }
@@ -74,7 +75,7 @@ namespace LoanCalculatorAPI.Services
                 throw new InvalidOperationException();
             }
 
-            return MontlyInterestAmmountCalculator(loan);
+            return MontlyInterestAmountCalculator(loan);
         }
 
         #region Helping methods
@@ -85,39 +86,39 @@ namespace LoanCalculatorAPI.Services
         /// <returns>value of the monthly loan rate</returns>
         private double MonthlyRateCalculator(Loan loan)
         {
-            var loantotalmonths = YearsToMonthsConverter(loan.LoanPeriod);
+            var loanTotalMonths = YearsToMonthsConverter(loan.Period);
             var totalLoanInterest = TotalInterest(loan);
-            var totalPayableAmmount = TotalPayableLoanAmmount(loan.LoanAmmount, totalLoanInterest);
+            var totalPayableAmount = TotalPayableLoanAmount(loan.Amount, totalLoanInterest);
 
-            return Math.Round(totalPayableAmmount / loantotalmonths, 2);
+            return Math.Round(totalPayableAmount / loanTotalMonths, 2);
         }
 
-        private double MontlyInterestAmmountCalculator(Loan loan)
+        private double MontlyInterestAmountCalculator(Loan loan)
         {
             var totalLoanInterest = TotalInterest(loan);
-            var loanTotalMonths = YearsToMonthsConverter(loan.LoanPeriod);
+            var loanTotalMonths = YearsToMonthsConverter(loan.Period);
 
             return Math.Round(totalLoanInterest / loanTotalMonths, 2);
         }
 
         private double TotalInterest(Loan loan)
         {
-            return Math.Round((loan.LoanAmmount * (_constants.FixedLoanInterest / 100) * loan.LoanPeriod), 2);
+            return Math.Round((loan.Amount * (_constants.FixedLoanInterest / 100) * loan.Period), 2);
         }
 
-        private double TotalPayableLoanAmmount(double loanammount, double totalinterest)
+        private double TotalPayableLoanAmount(double loanAmount, double totalInterest)
         {
-            return Math.Round((loanammount + totalinterest), 2);
+            return Math.Round((loanAmount + totalInterest), 2);
         }
 
-        private double MontlyRateWithoutInterest(double montlyinterestammount, double monthlyrateammount)
+        private double MontlyRateWithoutInterest(double montlyInterestAmount, double monthlyRateAmount)
         {
-            return Math.Round(monthlyrateammount - montlyinterestammount, 2);
+            return Math.Round(monthlyRateAmount - montlyInterestAmount, 2);
         }
 
-        private double CalculateRemainingDebtAmmount(double initialammount, double monthlyrateammount, int factor)
+        private double CalculateRemainingDebtAmount(double initialAmount, double monthlyRateAmount, int factor)
         {
-            return  (Math.Round(initialammount - (monthlyrateammount * factor), 2));
+            return  (Math.Round(initialAmount - (monthlyRateAmount * factor), 2));
         }
 
         private int YearsToMonthsConverter(int years)
@@ -126,6 +127,5 @@ namespace LoanCalculatorAPI.Services
         }
 
         #endregion Helping methods
-
     }
 }

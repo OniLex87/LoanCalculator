@@ -12,17 +12,11 @@ namespace LoanCalculatorAPI.Controllers
     public class LoanController : ControllerBase
     {
         private readonly ILoanService _loanService;
+        
 
         public LoanController(ILoanService loanService)
         {
             _loanService = loanService;
-        }
-
-        // GET: api/<LoanController>
-        [HttpGet]
-        public IEnumerable<object> Get()
-        {
-            return new object[] { new { nume = "value1" , prenume="value2"} } ;
         }
 
         // GET api/<LoanController>/5
@@ -55,18 +49,7 @@ namespace LoanCalculatorAPI.Controllers
             return new JsonResult(new {monthlyRate = result});
         }
 
-        // PUT api/<LoanController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<LoanController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            
-        }
+ 
 
     }
 }

@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div *ngIf="!browseMode" style='text-align:center'>
+        <h1 class="text-primary">Welcome your financial plans!</h1>
+        <p class="lead text-primary">Go ahead and browse for a financial solution!</p>
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-lg mr-2 float-end"  routerLink="/calc-standard">
+                    Get started!
+                </button>
+            </div>
+            
+            <div class="col-md-6">
+                <button class="btn btn-dark btn-lg float-start" >Learn more</button>
+            </div>
+            
+        </div>
+    </div>
+    <!-- <div *ngIf="browseMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <h1 class="row justify-content-center text-primary">Let`s start!</h1>
+                <app-loantype [loanTypesFromHomeComponent]="types"></app-loantype>
+            </div>
+        </div>
+    </div> -->
+</div>

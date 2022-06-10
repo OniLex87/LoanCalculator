@@ -3,11 +3,9 @@ namespace LoanCalculatorAPI.Models
 {
     public class Loan
     {
-        public int LoanPeriod { get; set; }
-
-        public double LoanAmmount { get; set; }
-
-        public LoanType LoanType { get; set; }
+        public int Period { get; set; }
+        public double Amount { get; set; }
+        public int LoanType { get; set; }
 
     }
     public enum LoanType

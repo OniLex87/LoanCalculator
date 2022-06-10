@@ -1,36 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { slider } from './_utils/slider';
 
 @Component({
   selector: 'app-root',
+  animations: [ 
+  slider
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
-
 export class AppComponent {
-   public periodSlider?: PeriodSlider;
-
-  constructor(http: HttpClient) {
-  
-    http.get<PeriodSlider>('https://localhost:5001/api/loan').subscribe(result => {
-      this.periodSlider = result;
-    }, error => console.error(error));
-  }
-  onYearSubmitted(event:any){
-    console.log(event);
-  }
-  // RestrictedValues(event:any){
-  //  if(event.target.in)
-  // }
-  
   title = 'VismaLoanCalculator';
+  constructor(http: HttpClient) {
 
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+ }
 }
-
-interface PeriodSlider{
-  periodYears: number;
-}
-
-
-

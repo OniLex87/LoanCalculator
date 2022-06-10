@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    height:100vh;
+    background:  linear-gradient(white, #e9ecef)
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #0275d8;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #0275d8;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #0275d8;
+}
+
+.calc-button {
+    border: 1px solid;
+    border-radius: 2rem;
+}
+
+.custom-nav {
+   -webkit-box-shadow: 0 8px 6px -6px #999;
+   -moz-box-shadow: 0 8px 6px -6px #999;
+   box-shadow: 0 8px 6px -6px #999;
+}
