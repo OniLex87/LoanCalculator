@@ -1,17 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav">
   <div class="container-fluid">
+    <img src="assets/images/logos/logocompany.png" class="nav-logo">
     <a class="navbar-brand" routerLink="/">Financial Solutions</a>
-    <form #loanTypes="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="getloantype()" autocomplete="off">
-      
-    </form>
+    <form #loanTypes="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="getloantype()" autocomplete="off"></form>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <loantypes></loantypes>
-    </ul>
+        <loantypes></loantypes>
+      </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search " aria-label="Type of Loan">
         <button class="btn btn-outline-primary text-primary" type="submit">Search</button>
@@ -19,27 +18,3 @@
     </div>
   </div>
 </nav>
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar w/ text</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
-    </div>
-  </div>
-</nav> -->

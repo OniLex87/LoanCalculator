@@ -21,5 +21,4 @@ export class Loan implements ILoan {
         this.interest = 3.5;
         this.type = LoanType.Standard;
     }
-
 }

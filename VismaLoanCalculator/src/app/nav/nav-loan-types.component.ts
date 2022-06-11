@@ -3,7 +3,9 @@ import { LoanTypesService } from '../_services/loan-types.service';
 @Component({
     selector: 'loantypes',
     template: `
+    
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          
     <li class="nav-item" *ngFor="let loantype of loantypes">
           <a class=" nav-link" aria-current="page" routerLink="calc-{{loantype.key}}">{{loantype.value}}</a>
         </li>

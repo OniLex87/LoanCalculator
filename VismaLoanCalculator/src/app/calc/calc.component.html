@@ -35,17 +35,17 @@
         </form>
         <div class="card-body m-4 p-2 text-primary" *ngIf="this.isVisible">
           <h5 class="card-title text-center">Your monthly payment will be {{rate}} Lei!</h5>
-          <div >
+          <div>
             <div class="card-body flex-fill ">
               <table class="table table-bordered table-striped table-hover styled-table">
                 <thead>
                   <tr>
-                    <th>Amount</th>
-                    <th>Rate</th>
-                    <th>Interest</th>
+                    <th>Loan amount</th>
+                    <th>Monthly rate</th>
+                    <th>Interest amount</th>
                     <th>Next due date</th>
-                    <th>Remaining</th>
-                    <th>Total cost</th>
+                    <th>Remaining amount</th>
+                    <th>Total loan cost</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,7 @@
                     <td>{{ item.initialLoanAmount }}</td>
                     <td>{{ item.montlyRateAmount }}</td>
                     <td>{{ item.monthlyInterestAmount }}</td>
-                    <td > {{item.nextDueDate | date:'dd/MM/YYYY'}}</td>
+                    <td> {{item.nextDueDate | date:'dd/MM/YYYY'}}</td>
                     <td>{{ item.remainingLoanAmount }}</td>
                     <td>{{ item.totalPayableAmount }}</td>
                   </tr>

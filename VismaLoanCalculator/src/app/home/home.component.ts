@@ -15,11 +15,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  browseToggle() {
-    //this.browseMode = !this.browseMode;
-    //router
-  }
-
 
   gerTypesofLoans(event: number) {
     this.types = event;

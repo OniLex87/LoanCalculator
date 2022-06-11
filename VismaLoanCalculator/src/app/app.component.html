@@ -1,5 +1,5 @@
-  <app-nav></app-nav>
-  <div class="container" style="margin-top:100 px " [@routeAnimations]="prepareRoute(outlet)" >
-    <router-outlet  #outlet="outlet"></router-outlet>
-  </div>
-
+<app-nav></app-nav>
+<div class="container" style="margin-top:100 px " [@routeAnimations]="prepareRoute(outlet)">
+  <img src="assets/images/background/ribbonbackground.png" class="main-background">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

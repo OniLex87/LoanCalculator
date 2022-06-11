@@ -25,10 +25,10 @@ import { CalcService } from './_services/calc.service';
     HomeComponent,
     LoantypeComponent,
     CalcComponent,
-    
+
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, AppRoutingModule,BrowserAnimationsModule
+    BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, BrowserAnimationsModule
   ],
   providers: [LoanTypesService, CalcService],
   bootstrap: [AppComponent]
